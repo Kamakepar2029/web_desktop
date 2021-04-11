@@ -1,0 +1,108 @@
+<!doctype html>
+<html style="height:100%;">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Audio Player</title>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <style>
+    html { min-height:100vh;}
+    body { background-color:#fafafa; font-family:'Roboto';}
+    .container { margin:150px auto; max-width:960px;}
+    .mediPlayer { float:left; margin:20px;}
+		
+*,
+*:after,
+*:before {
+    box-sizing             : border-box;
+    -webkit-box-sizing     : border-box;
+    -moz-box-sizing        : border-box;
+    -webkit-font-smoothing : antialiased;
+    -moz-font-smoothing    : antialiased;
+    -o-font-smoothing      : antialiased;
+    font-smoothing         : antialiased;
+    text-rendering         : optimizeLegibility;
+
+}
+
+.mediPlayer .control {
+    opacity        : 0; /* transition: opacity .2s linear; */
+    pointer-events : none;
+    cursor         : pointer;
+}
+
+.mediPlayer .not-started .play, .mediPlayer .paused .play {
+    opacity : 1;
+
+}
+
+.mediPlayer .playing .pause {
+    opacity : 1;
+
+}
+
+.mediPlayer .playing .play {
+    opacity : 0;
+}
+
+.mediPlayer .ended .stop {
+    opacity        : 1;
+    pointer-events : none;
+}
+
+.mediPlayer .precache-bar .done {
+    opacity : 0;
+}
+
+.mediPlayer .not-started .progress-bar, .mediPlayer .ended .progress-bar {
+    display : none;
+}
+
+.mediPlayer .ended .progress-track {
+    stroke-opacity : 1;
+}
+
+.mediPlayer .progress-bar,
+.mediPlayer .precache-bar {
+    transition        : stroke-dashoffset 500ms;
+
+    stroke-dasharray  : 298.1371428256714;
+    stroke-dashoffset : 298.1371428256714;
+}
+    </style>
+</head>
+<body style="display:flex;align-items:center;justify-content:center;height:100%;width:100%;margin:0px;">
+<div class="mediPlayer">
+    <audio class="listen" id="playaudiod" preload="none" data-size="250" src=""></audio>
+</div>
+</div>
+<!-- Media Player / -->
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="player.js"></script>
+<script>
+	
+</script>
+
+<script>
+var parts = window.location.search.substr(1).split("&");
+var $_GET = {};
+for (var i = 0; i < parts.length; i++) {
+    var temp = parts[i].split("=");
+    $_GET[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
+}
+if ($_GET['src']){
+	var source = $_GET['src'];
+	document.getElementById('playaudiod').src=source;
+}
+</script>
+<script>
+    $(document).ready(function () {
+        $('.mediPlayer').mediaPlayer();
+    });
+</script>
+<script type="text/javascript">
+</script>
+</body>
+</html>
