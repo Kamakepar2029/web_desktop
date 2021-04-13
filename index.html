@@ -224,7 +224,7 @@ function show_dialog(){
 	`;
 	let div = document.createElement('div');
 	div.innerHTML = dialog;
-	 document.body.append(div);
+	 too = document.getElementsByClassName('down')[0];too.before(div);
 	 dragMaster1.makeDraggable(document.getElementById(uniqid));
 	 add_to_queue('Voice Assistant',uniqid);
 	//document.body.innerHTML = document.body.innerHTML+dialog;
@@ -263,7 +263,7 @@ function show_dialog_poi( text ){
 	`;
 	let div = document.createElement('div');
 	div.innerHTML = dialog;
-	 document.body.append(div);
+	 too = document.getElementsByClassName('down')[0];too.before(div);
 	 dragMaster1.makeDraggable(document.getElementById(uniqid));
 	 add_to_queue('Notify',uniqid);
 	//document.body.innerHTML = document.body.innerHTML+dialog;
@@ -283,7 +283,7 @@ function show_app(id){
 	`;
 	let div = document.createElement('div');
 		div.innerHTML = dialog;
-	 	document.body.append(div);
+	 	too = document.getElementsByClassName('down')[0];too.before(div);
 		var ui_el = 'paint__name_'+uniqid;
 		make_paint('paint__name_'+uniqid);
 		add_to_queue('Paint', uniqid);
@@ -303,7 +303,7 @@ function show_app(id){
 	let div = document.createElement('div');
 		div.innerHTML = dialog;
 		div.id='pre_'+uniqid;
-	 	document.body.append(div);
+	 	too = document.getElementsByClassName('down')[0];too.before(div);
 		 var selector_name = uniqid+'_text';
 		 CKEDITOR.replace( selector_name );
 		//tinymce.init({ selector:selector_name });
@@ -323,7 +323,7 @@ function show_app(id){
 	`;
 	let div = document.createElement('div');
 		div.innerHTML = dialog;
-	 	document.body.append(div);
+	 	too = document.getElementsByClassName('down')[0];too.before(div);
 		 var selector_name = uniqid+'_text';
 		//tinymce.init({ selector:selector_name });
 		add_to_queue('Pacman', uniqid)
@@ -343,7 +343,7 @@ function show_app(id){
 	`;
 	let div = document.createElement('div');
 		div.innerHTML = dialog;
-	 	document.body.append(div);
+	 	too = document.getElementsByClassName('down')[0];too.before(div);
 		 var selector_name = uniqid+'_text';
 		//tinymce.init({ selector:selector_name });
 		add_to_queue('Racing', uniqid)
@@ -362,7 +362,7 @@ function show_app(id){
 	`;
 	let div = document.createElement('div');
 		div.innerHTML = dialog;
-	 	document.body.append(div);
+	 	too = document.getElementsByClassName('down')[0];too.before(div);
 		 var selector_name = uniqid+'_text';
 		//tinymce.init({ selector:selector_name });
 		add_to_queue('Hill Climb', uniqid)
@@ -381,7 +381,7 @@ function show_app(id){
 	`;
 	let div = document.createElement('div');
 		div.innerHTML = dialog;
-	 	document.body.append(div);
+	 	too = document.getElementsByClassName('down')[0];too.before(div);
 		 var selector_name = uniqid+'_text';
 		//tinymce.init({ selector:selector_name });
 		add_to_queue('Plane', uniqid)
@@ -401,7 +401,7 @@ function show_app(id){
 	`;
 	let div = document.createElement('div');
 		div.innerHTML = dialog;
-	 	document.body.append(div);
+	 	too = document.getElementsByClassName('down')[0];too.before(div);
 		 var selector_name = uniqid+'_text';
 		//tinymce.init({ selector:selector_name });
 		add_to_queue('Player', uniqid)
@@ -420,7 +420,7 @@ function show_app(id){
 	`;
 	let div = document.createElement('div');
 		div.innerHTML = dialog;
-	 	document.body.append(div);
+	 	too = document.getElementsByClassName('down')[0];too.before(div);
 		 var selector_name = uniqid+'_text';
 		//tinymce.init({ selector:selector_name });
 		add_to_queue('Terminal', uniqid)
@@ -446,7 +446,7 @@ function start_song(name){
 	`;
 	let div = document.createElement('div');
 		div.innerHTML = dialog;
-	 	document.body.append(div);
+	 	too = document.getElementsByClassName('down')[0];too.before(div);
 		 var selector_name = uniqid+'_text';
 		//tinymce.init({ selector:selector_name });
 		add_to_queue('Player', uniqid);
@@ -486,7 +486,7 @@ function search_songs(id){
 		var template = `
 	<div class="song">
 	<div class="song_left" onclick="play_song('`+elem["url"]+`','`+text_id+`', '`+elem["title"]+`', '`+elem["artist"]+`');">
-		<i class="fa fa-play" aria-hidden="true"></i>
+		<i class="fa fa-play" aria-hidden="true" style="background: url('`+elem["photo"]+`');background-size:cover;"></i>
 	</div>
 	<div class="song_right">
 		<div class="song__title">`+elem["title"]+`</div>
@@ -513,7 +513,7 @@ function show_change_background_dialog(){
     </div>`;
 	let div = document.createElement('div');
 	div.innerHTML = dia;
-	document.body.append(div);
+	too = document.getElementsByClassName('down')[0];too.before(div);
 	dragMaster1.makeDraggable(document.getElementById('notify_background'));
 	add_to_queue('Settings', uniqid)
 }
@@ -578,7 +578,7 @@ function create_notify_new_onstart(content){
 	let div = document.createElement('div');
 	div.innerHTML = dialog;
 	div.id= 'pre_'+uniqid;
-	 document.body.append(div);
+	 too = document.getElementsByClassName('down')[0];too.before(div);
 	 dragMaster1.makeDraggable(document.getElementById(uniqid));
 	 add_to_queue('Notification',uniqid);
 }
